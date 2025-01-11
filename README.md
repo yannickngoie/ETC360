@@ -33,7 +33,7 @@ This project is a Quasar Capacitor app for synchronizing records between a local
 
 ### Frontend 
 
- Setup
+ **Setup**
 Install Quasar CLI using: 
 ```bash
    npm install -g @quasar/cli
