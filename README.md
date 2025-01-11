@@ -149,10 +149,10 @@ npx tsc
 
 ```
 
-
 Start the Backend
 
 ```sh
 node dist/app.js
+The backend will be available at http://localhost:5000.
 
 ```
