@@ -31,55 +31,68 @@ This project is a Quasar Capacitor app for synchronizing records between a local
 1. **Node.js**: Install from [Node.js official site](https://nodejs.org/).
 2. **PostgreSQL**: Ensure PostgreSQL is installed and configured.
 
-### Frontend 
 
- **Setup**
-Install Quasar CLI using: 
-```bash
-   npm install -g @quasar/cli
+## Development
 
-Install Capacitor CLI using: 
-   Capacitor CLI: Install globally using:
- ```bash
-npm install -g @capacitor/cli
-Android Studio: Required for deploying to an Android device/emulator.
+ Install Quasar CLI and Capacitor CLI
 
-1. Clone the Repository
 
- ```bash
+```sh
+npm install -g @quasar/cli @capacitor/cli
+```
+
+Install Android Studio: Required for deploying to an Android device/emulator.
+
+Clone the Repository
+
+```sh
 git clone https://github.com/ETC360/quasar-capacitor-app.git
-cd frontend
+cd quasar-capacitor-app
 
-2. Install Dependencies
-bash
-Copy code
+```
+Install Dependencies
+
+
+```sh
 npm install
 
-3. Configure the API URL
-Open the src/config.js file (or equivalent) in the frontend directory and set the API_BASE_URL:
+```
+Build the Frontend
 
-typescript
-Copy code
-export const API_BASE_URL = 'http://10.0.2.2:5000'; // For Android emulator
-4. Build the Frontend
-bash
-Copy code
+```sh
 quasar build
-5. Add Capacitor to the Project
-bash
-Copy code
+
+```
+Add Capacitor to the Project
+
+```sh
 npx cap add android
-6. Synchronize Capacitor Files
-bash
-Copy code
+
+```
+Synchronize Capacitor Files
+
+```sh
 npx cap sync
-7. Open the Project in Android Studio
-bash
-Copy code
+
+```
+
+Open the Project in Android Studio
+
+```sh
 npx cap open android
-8. Deploy to Emulator/Device
+
+
+```
+
+Deploy to Emulator/Device
+
+```sh
 In Android Studio, select your target emulator or device.
 Click Run to deploy the application.
+
+```
+
+
 Backend Setup
 1. Clone the Repository
 bash
