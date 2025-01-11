@@ -31,36 +31,34 @@ This project is a Quasar Capacitor app for synchronizing records between a local
 1. **Node.js**: Install from [Node.js official site](https://nodejs.org/).
 2. **PostgreSQL**: Ensure PostgreSQL is installed and configured.
 
-### Frontend
-3. **Quasar CLI**: Install globally:
-   ```bash
+### Frontend 
+
+ Setup
+Install Quasar CLI using: 
+```bash
    npm install -g @quasar/cli
 
-
-Capacitor CLI: Install globally using:
-bash
-Copy code
-npm install -g @capacitor/cli
-Android Studio (if deploying to an Android device/emulator).
-Capacitor CLI: Install globally:
-bash
-Copy code
+Install Capacitor CLI using: 
+   Capacitor CLI: Install globally using:
+ ```bash
 npm install -g @capacitor/cli
 Android Studio: Required for deploying to an Android device/emulator.
-Frontend Setup
+
 1. Clone the Repository
-bash
-Copy code
+
+ ```bash
 git clone https://github.com/ETC360/quasar-capacitor-app.git
 cd frontend
+
 2. Install Dependencies
 bash
 Copy code
 npm install
+
 3. Configure the API URL
 Open the src/config.js file (or equivalent) in the frontend directory and set the API_BASE_URL:
 
-javascript
+typescript
 Copy code
 export const API_BASE_URL = 'http://10.0.2.2:5000'; // For Android emulator
 4. Build the Frontend
