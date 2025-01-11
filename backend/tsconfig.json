@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+      "target": "ES6", // Choose your target ES version
+      "module": "commonjs", // Use CommonJS for Node.js
+      "outDir": "./dist", // Output folder for compiled JS files
+      "rootDir": "./", // Root directory for TypeScript files
+      "strict": true, // Enable strict type checking
+      "esModuleInterop": true, // Required for compatibility with CommonJS modules
+      "resolveJsonModule": true, // Allow importing JSON files
+      "skipLibCheck": true // Skip type-checking of declaration files
+  },
+  "include": [
+      "./**/*.ts"
+  ], // Include all .ts files in the project
+  "exclude": [
+      "node_modules",
+      "dist"
+  ] // Exclude unnecessary files/folders
+}
