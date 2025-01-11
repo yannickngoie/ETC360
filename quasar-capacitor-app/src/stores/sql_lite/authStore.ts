@@ -1,7 +1,7 @@
 import { CapacitorSQLite } from '@capacitor-community/sqlite';
 import { v4 as uuidv4 } from 'uuid';
 
-class AuthStore {
+export class AuthStore {
   token = '';
   isAuthenticated = false;
   sqlite = null;

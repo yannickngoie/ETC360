@@ -44,7 +44,7 @@ export const useRecordsStore = defineStore('records', () => {
       const storedRecords = (await db.getAll(storeName)) as RecordItem[];
       records.value = storedRecords;
 
-      const response = await fetch('http://localhost:5000/records/all', {
+      const response = await fetch('http://10.0.2.2:5000/records/all', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('auth_token')}`,
@@ -117,7 +117,7 @@ export const useRecordsStore = defineStore('records', () => {
       for (const record of recordsToSync) {
         let response: Response;
         if (record.isNew) {
-          response = await fetch('http://localhost:5000/records/add', {
+          response = await fetch('http://10.0.2.2:5000/records/add', {
             method: 'POST',
             body: JSON.stringify({
               title: record.title,
@@ -130,7 +130,7 @@ export const useRecordsStore = defineStore('records', () => {
             },
           });
         } else if (record.isModified) {
-          response = await fetch('http://localhost:5000/records/edit', {
+          response = await fetch('http://10.0.2.2:5000/records/edit', {
             method: 'PUT',
             body: JSON.stringify(record),
             headers: {
@@ -139,7 +139,7 @@ export const useRecordsStore = defineStore('records', () => {
             },
           });
         } else if (record.isDeleted) {
-          response = await fetch('http://localhost:5000/records/delete', {
+          response = await fetch('http://10.0.2.2:5000/records/delete', {
             method: 'DELETE',
             body: JSON.stringify({ id: record.id }),
             headers: {

@@ -7,7 +7,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   const login = async (username, password) => {
     // Replace with actual API call to authenticate
-    const response = await fetch('http://localhost:5000/auth/login', {
+    const response = await fetch('http://10.0.2.2:5000/auth/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: {

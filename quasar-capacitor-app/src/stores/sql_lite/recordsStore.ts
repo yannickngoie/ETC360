@@ -1,5 +1,6 @@
 import { Capacitor } from '@capacitor/core';
 import { CapacitorSQLite } from '@capacitor-community/sqlite';
+import { authStore } from './authStore';
 import { v4 as uuidv4 } from 'uuid';
 
 interface RecordItem {
@@ -152,9 +153,18 @@ export class RecordsStore {
     }
   }
 
+
+  
+
   // Synchronize the local records with a remote server
   async syncRecords(): Promise<void> {
     try {
+
+
+        if (!authStore.getToken()) {
+          throw new Error('Authentication token not found');
+        }
+
       const recordsToSync = this.records.filter(
         (record) => record.isNew || record.isModified || record.isDeleted
       );
@@ -162,7 +172,7 @@ export class RecordsStore {
       for (const record of recordsToSync) {
         let response: Response;
         if (record.isNew) {
-          response = await fetch('http://localhost:5000/records/add', {
+          response = await fetch('http://10.0.2.2:5000/records/add', {
             method: 'POST',
             body: JSON.stringify({
               title: record.title,
@@ -171,25 +181,25 @@ export class RecordsStore {
             }),
             headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${localStorage.getItem('auth_token')}`,
+              Authorization: `Bearer ${authStore.getToken()}`,
             },
           });
         } else if (record.isModified) {
-          response = await fetch('http://localhost:5000/records/edit', {
+          response = await fetch('http://10.0.2.2:5000/records/edit', {
             method: 'PUT',
             body: JSON.stringify(record),
             headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${localStorage.getItem('auth_token')}`,
+              Authorization: `Bearer ${authStore.getToken()}`,
             },
           });
         } else if (record.isDeleted) {
-          response = await fetch('http://localhost:5000/records/delete', {
+          response = await fetch('http://10.0.2.2:5000/records/delete', {
             method: 'DELETE',
             body: JSON.stringify({ id: record.id }),
             headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${localStorage.getItem('auth_token')}`,
+              Authorization: `Bearer ${authStore.getToken()}`,
             },
           });
         }
