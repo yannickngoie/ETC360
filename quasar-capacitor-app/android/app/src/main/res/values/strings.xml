@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">etc360</string>
+    <string name="title_activity_main">etc360</string>
+    <string name="package_name">etc.app.com</string>
+    <string name="custom_url_scheme">etc.app.com</string>
+</resources>

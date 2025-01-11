@@ -1,0 +1,5 @@
+{
+  "appId": "etc.app.com",
+  "appName": "etc360",
+  "webDir": "dist/spa"
+}
