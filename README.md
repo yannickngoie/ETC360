@@ -34,6 +34,8 @@ This project is a Quasar Capacitor app for synchronizing records between a local
 
 ## Development
 
+### FrontEnd
+
  Install Quasar CLI and Capacitor CLI
 
 
@@ -93,19 +95,29 @@ Click Run to deploy the application.
 ```
 
 
-Backend Setup
-1. Clone the Repository
-bash
-Copy code
+### Backend
+
+Clone the Repository
+
+```sh
 git clone https://github.com/ETC360/backend.git
 cd backend
-2. Install Dependencies
-bash
-Copy code
-npm install
-3. Configure Environment Variables
-Create a .env file in the backend directory with the following content:
 
+```
+Install Dependencies
+
+
+```sh
+npm install
+
+```
+
+
+
+Configure Environment Variables.
+Udpate the .env file in the backend directory with the following content:
+
+```sh
 env
 Copy code
 DB_HOST=localhost
@@ -115,18 +127,32 @@ DB_PASSWORD=your_postgres_password
 DB_NAME=your_database_name
 JWT_SECRET=your_jwt_secret
 PORT=5000
-4. Initialize the Database
+
+```
+
+
+Initialize the Database
 Run the following commands in your PostgreSQL terminal:
 
+```sh
 sql
-Copy code
 CREATE DATABASE your_database_name;
 CREATE USER your_postgres_username WITH PASSWORD 'your_postgres_password';
-GRANT ALL PRIVILEGES ON DATABASE your_database_name TO your_postgres_username;
-5. Start the Backend
-bash
-Copy code
-npm start
-The backend will be available at http://localhost:5000.
+GRANT ALL PRIVILEGES ON DATABASE your_database_name TO your_postgres_username
+
+```
+
+Build the Backend
+
+```sh
+npx tsc 
+
+```
 
 
+Start the Backend
+
+```sh
+node dist/app.js
+
+```
